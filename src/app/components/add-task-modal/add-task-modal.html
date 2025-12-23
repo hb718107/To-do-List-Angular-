@@ -1,0 +1,10 @@
+<div class="modal-backdrop" (click)="cancel()"></div>
+
+<div class="modal">
+  <h2>New Task</h2>
+  <input type="text" [(ngModel)]="taskTitle" placeholder="Input your note..." />
+  <div class="buttons">
+    <button (click)="cancel()">CANCEL</button>
+    <button (click)="apply()">APPLY</button>
+  </div>
+</div>

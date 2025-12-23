@@ -1,12 +1,23 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TodoHeader } from './components/todo-header/todo-header';
+import { EmptyState } from './components/empty-state/empty-state';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Task } from './Models/task.model';
+import { AddTaskModalComponent } from './components/add-task-modal/add-task-modal';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, TodoHeader, EmptyState, CommonModule, FormsModule, AddTaskModalComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
-  protected readonly title = signal('todo-app');
+  tasks: Task[] = [];
+  showModal = false;
+
+  addTask(newTask: string) {
+    this.tasks.push({ title: newTask, completed: false });
+  }
 }
