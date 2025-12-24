@@ -4,6 +4,14 @@
     <!--empty state component-->
     <empty-state *ngIf="tasks.length === 0"></empty-state>
 
+   <app-task-list
+  *ngIf="tasks.length > 0"
+  [tasks]="tasks"
+  (deleteTask)="deleteTask($event)"
+  (editTask)="updateTask($event)">
+  </app-task-list>
+
+
     <button class="fab" (click)="showModal = true">
   <i class="fas fa-plus"></i>
 </button>

@@ -1,0 +1,13 @@
+<div *ngFor="let task of tasks; let i = index" class="task-row">
+  <input type="checkbox" [(ngModel)]="task.completed" />
+
+  <span *ngIf="editingIndex !== i" [class.completed]="task.completed">
+    {{ task.title }}
+  </span>
+
+  <input *ngIf="editingIndex === i" type="text" [(ngModel)]="editingTitle" />
+
+  <button *ngIf="editingIndex !== i" (click)="startEditing(i, task.title)"><i class="fas fa-pencil"></i></button>
+  <button *ngIf="editingIndex === i" (click)="saveEdit(i)"><i class="fas fa-save"></i></button>
+  <button class="delete-btn" (click)="deleteTask.emit(i)"><i class="fas fa-trash"></i></button>
+</div>
