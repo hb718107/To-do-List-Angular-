@@ -1,20 +1,26 @@
-<div class="app-container">
-    <todo-header></todo-header>
+<div class="app-container" [class.dark-mode]="darkMode">
+  <todo-header 
+    (searchClicked)="onSearchClicked($event)"
+    (filterChanged)="onFilterChanged($event)"
+    (toggleDarkMode)="toggleDarkMode()">
+  </todo-header>
 
-    <!--empty state component-->
-    <empty-state *ngIf="tasks.length === 0"></empty-state>
+  <empty-state *ngIf="filteredTasks.length === 0"></empty-state>
 
-   <app-task-list
-  *ngIf="tasks.length > 0"
-  [tasks]="tasks"
-  (deleteTask)="deleteTask($event)"
-  (editTask)="updateTask($event)">
+  <app-task-list
+    *ngIf="filteredTasks.length > 0"
+    [tasks]="filteredTasks"
+    (deleteTask)="deleteTask($event)"
+    (editTask)="updateTask($event)">
   </app-task-list>
 
+  <button class="fab" (click)="showModal = true">
+    <i class="fas fa-plus"></i>
+  </button>
 
-    <button class="fab" (click)="showModal = true">
-  <i class="fas fa-plus"></i>
-</button>
-
-    <add-task-modal *ngIf="showModal" (close)="showModal = false" (addTask)="addTask($event)"></add-task-modal>
+  <add-task-modal 
+    *ngIf="showModal" 
+    (close)="showModal = false" 
+    (addTask)="addTask($event)">
+  </add-task-modal>
 </div>

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input,Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Task } from '../../Models/task.model';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-task-list',
@@ -10,6 +11,8 @@ import { Task } from '../../Models/task.model';
   styleUrl: './task-list.css',
 })
 export class TaskList {
+
+  constructor(private taskService: TaskService) {}
 
   editingIndex: number | null = null;
   editingTitle: string = '';

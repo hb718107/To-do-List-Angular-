@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+/* body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+body.dark-mode input::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode .fab {
+  background-color: #fff;
+  color: #121212;
+}
+
+body.dark-mode .fab:hover {
+  box-shadow: 0 6px 12px rgba(255,255,255,0.3);
+}
+
+body.dark-mode .task-row {
+  border-bottom: 1px solid #444;
+  color: #f1f1f1;
+  background-color: inherit;
+}
+
+body.dark-mode .task-row:hover {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .modal-container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .modal-container h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .modal-container input,
+body.dark-mode .modal-container select {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+body.dark-mode .modal-container button {
+  background-color: #6C63FF;
+  color: #fff;
+}
+
+body.dark-mode .empty-state {
+  color: #ccc;
+}
+
+body.dark-mode .todo-header h1 {
+  color: #f1f1f1;
+}
+
+body.dark-mode input:focus, 
+body.dark-mode select:focus {
+  outline: 2px solid #9b9bff;
+} */

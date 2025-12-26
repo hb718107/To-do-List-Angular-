@@ -1,29 +1,33 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'add-task-modal',
   templateUrl: './add-task-modal.html',
   styleUrls: ['./add-task-modal.css'],
-  imports: [FormsModule, CommonModule],
+  imports: [CommonModule, FormsModule],
+  // host: {
+  //   '[class.dark-mode]': 'darkMode'
+  // }
 })
 export class AddTaskModalComponent {
-  taskTitle = '';
-
-  @Output() close = new EventEmitter<void>();
+  // @Input() darkMode: boolean = false;
   @Output() addTask = new EventEmitter<string>();
+  @Output() close = new EventEmitter<void>();
+
+  newTaskTitle: string = '';
 
   apply() {
-    if (this.taskTitle.trim()) {
-      this.addTask.emit(this.taskTitle);
-      this.taskTitle = '';
+    if (this.newTaskTitle.trim() !== '') {
+      this.addTask.emit(this.newTaskTitle.trim());
+      this.newTaskTitle = '';
       this.close.emit();
     }
   }
 
   cancel() {
-    this.taskTitle = '';
+    this.newTaskTitle = '';
     this.close.emit();
   }
 }

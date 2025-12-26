@@ -1,11 +1,23 @@
 <h1>TO-DO LIST</h1>
-<div class="controls">
-    <input type="text" placeholder="Search For Tasks...." />
-    <select>
-        <option>ALL</option>
-        <option>COMPLETED</option>
-        <option>PENDING</option>
-    </select>
 
-    <!-- <button><i class="fas fa-moon"></i>Dark Mode</button> -->
+<div class="controls">
+  
+  <input 
+    type="text" 
+    placeholder="Search For Tasks...." 
+    [(ngModel)]="searchText" />
+
+  
+  <button (click)="onSearchButtonClick()">Search</button>
+
+  
+  <select [value]="selectedFilter" (change)="onFilterChange($event)">
+    <option>ALL</option>
+    <option>COMPLETED</option>
+    <option>PENDING</option>
+  </select>
+  <!-- <button (click)="onDarkModeClick()">
+  <i class="fas fa-moon"></i>
+</button> -->
+
 </div>

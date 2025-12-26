@@ -1,58 +1,103 @@
-.modal-backdrop {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 10;
+:host {
+  display: block;
+  transition: all 0.3s;
 }
 
-.modal {
+.modal-container {
   position: fixed;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 20px 30px;
+  padding: 20px;
   border-radius: 10px;
-  z-index: 20;
-  min-width: 300px;
-  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: all 0.3s;
 }
 
-.modal input {
+.modal-container h2 {
+  color: #121212;
+  margin-bottom: 15px;
+}
+
+.modal-container input {
   width: 100%;
-  padding: 10px;
-  margin: 15px 0;
-  border: 2px solid #ccc;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: #fff;
+  color: #121212;
+  transition: all 0.3s;
 }
 
-.modal input:focus {
-  outline: none;
-  border-color: #6C63FF;
+.modal-container input:focus {
+  outline: 2px solid #6C63FF;
 }
 
-.modal .buttons {
+.buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
-.modal .buttons button:first-child {
-  background: white;
-  border: 2px solid #6C63FF;
-  color: #6C63FF;
-  padding: 5px 15px;
-  border-radius: 5px;
+button {
+  padding: 6px 12px;
   cursor: pointer;
-}
-
-.modal .buttons button:last-child {
-  background: #6C63FF;
-  color: white;
+  border-radius: 5px;
   border: none;
-  padding: 5px 15px;
-  border-radius: 5px;
-  cursor: pointer;
+  transition: all 0.3s;
 }
-.modal .buttons button:first-child:hover {
-  background: #f0f0f0;
+
+
+.cancel-btn {
+  background-color: #6C63FF;
+  color: white;
+  border: 1px solid #6C63FF;
 }
+
+.cancel-btn:hover {
+  opacity: 0.9;
+}
+
+.apply-btn {
+  background-color: #6C63FF;
+  color: white;
+}
+
+.apply-btn:hover {
+  opacity: 0.9;
+}
+
+/* ================== DARK MODE ==================
+:host(.dark-mode) .modal-container {
+  background-color: #1e1e1e;
+}
+
+:host(.dark-mode) .modal-container h2 {
+  color: #ffffff;
+}
+
+:host(.dark-mode) .modal-container input {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+:host(.dark-mode) .modal-container input::placeholder {
+  color: #aaa;
+}
+
+:host(.dark-mode) .modal-container .cancel-btn {
+  background-color: #121212;
+  color: #6C63FF;
+  border: 1px solid #6C63FF;
+}
+
+:host(.dark-mode) .modal-container .apply-btn {
+  background-color: #6C63FF;
+  color: #fff;
+} */

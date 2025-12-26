@@ -1,10 +1,9 @@
-<div class="modal-backdrop" (click)="cancel()"></div>
-
-<div class="modal">
+<!-- [class.dark-mode]="darkMode" -->
+<div class="modal-container" >
   <h2>New Task</h2>
-  <input type="text" [(ngModel)]="taskTitle" placeholder="Input your note..." />
+  <input type="text" placeholder="Input your note..." [(ngModel)]="newTaskTitle" />
   <div class="buttons">
-    <button (click)="cancel()">CANCEL</button>
-    <button (click)="apply()">APPLY</button>
+    <button class="cancel-btn" (click)="cancel()">Cancel</button>
+    <button class="apply-btn" (click)="apply()">Apply</button>
   </div>
 </div>
